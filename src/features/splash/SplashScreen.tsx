@@ -1,7 +1,18 @@
 import { Box, Typography } from "@mui/material";
-//import logo from "../assets/logo.jpeg"; 
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SplashScreen() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   return (
     <Box
       sx={{
