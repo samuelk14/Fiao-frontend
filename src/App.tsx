@@ -1,20 +1,17 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-import { Container, Typography, Button } from "@mui/material";
+import {useEffect, useState} from 'react'
+import SplashScreen from "./features/splash/SplashScreen";
+import LoginScreen from "./features/login/LoginScreen";
 import './App.css'
 
-function App() {
-  return (
-    <Container maxWidth="sm" sx={{ textAlign: "center", mt: 8 }}>
-      <Typography variant="h4" gutterBottom>
-        Bienvenido a Fiao 📲
-      </Typography>
-      <Button variant="contained" color="primary">
-        Iniciar
-      </Button>
-    </Container>
-  );
-}
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
 
-export default App;
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000); // Mostrar la pantalla de splash por 2 segundos
+    return () => clearTimeout(timer);
+  }, []);
+
+  return showSplash ? <SplashScreen /> : <LoginScreen />;
+}
