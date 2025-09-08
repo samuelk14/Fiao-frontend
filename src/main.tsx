@@ -7,7 +7,14 @@ import App from './App.tsx'
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
+import "@fontsource/lato/400.css";   // regular
+import "@fontsource/lato/700.css";   // bold
+import "@fontsource/lato/900.css";   // extrabold
+
 const theme = createTheme({
+  typography: {
+    fontFamily: "Lato, Arial, sans-serif",
+  },
   palette: {
     mode: "light", // o "dark"
     primary: {
