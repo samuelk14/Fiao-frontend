@@ -1,5 +1,6 @@
-import { Box, Button, TextField, Typography, Link, Divider, Paper, Avatar } from "@mui/material";
+import { Box, Button, TextField, Typography, Link, Avatar, Card, CardContent, Stack} from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
+import Logo from "../../assets/fiao.svg";
 
 export default function LoginScreen() {
   return (
@@ -14,99 +15,136 @@ export default function LoginScreen() {
         px: 3,
       }}
     >
-      {/* Logo */}
-      <Typography variant="h3" fontWeight="bold" gutterBottom>
-        fiaó
-      </Typography>
+      <img src={Logo} alt="fiaó" style={{ width: 120 }} />
 
       {/* Título */}
-      <Typography variant="h6" fontWeight="bold" mb={3}>
+      <Typography
+        variant="h6"
+        fontWeight={800}
+        fontFamily="Lato"
+        mb={3}
+        sx={{ fontSize: "24px" }}
+      >
         Iniciar sesión
       </Typography>
+      
+       {/* Formulario */}
+      <Box width="100%" maxWidth={360}>
 
-      {/* Campos de usuario y contraseña */}
-      <TextField
-        label="Correo / Usuario"
-        placeholder="Ingresa tu usuario"
-        variant="outlined"
-        fullWidth
-        sx={{ mb: 2 }}
-      />
+        {/* Correo / Usuario */}
+        <TextField
+          fullWidth
+          label="Correo / Usuario"
+          placeholder="Ingresa tu usuario"
+          variant="outlined"
+          InputLabelProps={{
+            sx: { backgroundColor: "#FEF7FF", px: 0.5 },
+          }}
+          sx={{
+            mb: 2,
+            height: 56,
+            "& .MuiOutlinedInput-root": {
+              height: 56,
+            },
+          }}
+        />
 
-      <TextField
-        label="Contraseña"
-        placeholder="Ingresa tu contraseña"
-        type="password"
-        variant="outlined"
-        fullWidth
-        sx={{ mb: 1 }}
-      />
+        {/* Contraseña */}
+        <TextField
+          fullWidth
+          label="Contraseña"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          variant="outlined"
+          InputLabelProps={{
+            sx: { backgroundColor: "#FEF7FF", px: 0.5 },
+          }}
+          sx={{
+            mb: 3,
+            height: 56,
+            "& .MuiOutlinedInput-root": {
+              height: 56,
+            },
+          }}
+        />
 
-      {/* Olvidaste contraseña */}
-      <Box sx={{ width: "100%", textAlign: "right", mb: 3 }}>
-        <Typography variant="body2">
+        {/* ¿Olvidaste tu contraseña? */}
+        <Typography
+          variant="body2"
+          sx={{
+            color: "rgba(28,28,28,0.64)",
+            mb: 3,
+          }}
+        >
           ¿Olvidaste tu contraseña?{" "}
-          <Link href="#" underline="hover" fontWeight="bold">
+          <Link href="#" underline="none" sx={{ color: "#1C1C1C", fontWeight: 600 }}>
             Ingresa aquí
           </Link>
         </Typography>
+
+        {/* Botón Iniciar */}
+        <Button
+          fullWidth
+          variant="contained"
+          sx={{
+            backgroundColor: "#1C1C1C",
+            color: "white",
+            textTransform: "none",
+            fontWeight: 600,
+            height: 52,
+            mb: 2,
+            "&:hover": {
+              backgroundColor: "#333333",
+            },
+            borderRadius: "14px",
+          }}
+        >
+          Iniciar
+        </Button>
+
+        {/* Botón Google */}
+        <Button
+          fullWidth
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          sx={{
+            textTransform: "none",
+            color: "#1C1C1C",
+            borderColor: "#e0e0e0",
+            backgroundColor: "#FAFAFA",
+            mb: 3,
+            height: 52,
+            borderRadius: "14px",
+          }}
+        >
+          Iniciar con Google
+        </Button>
+
+        {/* Patrocinador */}
+        <Card
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            p: 1,
+            backgroundColor: "#FEF7FF",
+            borderRadius: "12px",
+          }}
+        >
+          <Avatar sx={{ bgcolor: "#E0D7FF", mr: 2 }}>P</Avatar>
+          <CardContent sx={{ flex: "1 0 auto", py: 1 }}>
+            <Typography sx={{ fontWeight: 600 }}>Patrocinador</Typography>
+            <Typography variant="body2" color="text.secondary">
+              Descripción
+            </Typography>
+          </CardContent>
+          {/* Espacio para íconos a la derecha */}
+          <Stack direction="row" spacing={1} pr={1}>
+            <Box sx={{ width: 24, height: 24, bgcolor: "#D8D0DD", borderRadius: "6px" }} />
+            <Box sx={{ width: 24, height: 24, bgcolor: "#D8D0DD", borderRadius: "6px" }} />
+            <Box sx={{ width: 24, height: 24, bgcolor: "#D8D0DD", borderRadius: "6px" }} />
+          </Stack>
+        </Card>
       </Box>
-
-      {/* Botón Iniciar */}
-      <Button
-        variant="contained"
-        fullWidth
-        sx={{
-          mb: 2,
-          bgcolor: "black",
-          "&:hover": { bgcolor: "#333" },
-          borderRadius: 3,
-          py: 1.2,
-        }}
-      >
-        Iniciar
-      </Button>
-
-      {/* Iniciar con Google */}
-      <Button
-        variant="outlined"
-        fullWidth
-        startIcon={<GoogleIcon />}
-        sx={{
-          mb: 3,
-          textTransform: "none",
-          bgcolor: "#f5f5f5",
-          border: "none",
-          borderRadius: 2,
-          py: 1.2,
-        }}
-      >
-        Iniciar con Google
-      </Button>
-
-      {/* Patrocinador */}
-      <Paper
-        elevation={2}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          p: 2,
-          borderRadius: 2,
-          bgcolor: "#fafafa",
-        }}
-      >
-        <Avatar sx={{ bgcolor: "purple", mr: 2 }}>P</Avatar>
-        <Box>
-          <Typography variant="body1" fontWeight="bold">
-            Patrocinador
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Descripción
-          </Typography>
-        </Box>
-      </Paper>
-
       
     </Box>
   );
