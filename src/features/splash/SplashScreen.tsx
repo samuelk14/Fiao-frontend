@@ -27,7 +27,7 @@ export default function SplashScreen() {
     >
       <Box
         component="img"
-        src="/src/assets/logo.jpeg"
+        src="/src/assets/fiao.svg"
         alt="Fiaó Logo"
         sx={{ width: 120, height: "auto", mb: 1 }}
       />
