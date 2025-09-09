@@ -66,4 +66,120 @@ export default tseslint.config([
     },
   },
 ])
+``````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````
+```````````````````````````````````````````````````````````````````````
+
+# 📱 Fiaó
+
+Proyecto frontend del sistema **Fiaó**.  
+Aplicación desarrollada en **React + Vite + TypeScript** con **Material UI** como librería de componentes y **React Router** para navegación.  
+
+---
+
+## 🚀 Requisitos previos
+
+- **Node.js**: `v22.19.0`  
+- **npm**: incluido con Node.js  
+
+---
+
+## 📦 Instalación del proyecto
+
+1. Clonar el repositorio:
+   ```bash
+   git clone <https://github.com/samuelk14/Fiao-frontend.git>
+   cd frontend
+   ```
+
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+
+---
+
+## 📜 Scripts disponibles
+
+En el archivo `package.json`:
+
+- `npm run dev` → Inicia el servidor de desarrollo con Vite.  
+- `npm run build` → Compila el proyecto para producción.  
+- `npm run lint` → Ejecuta ESLint para revisar el código.  
+- `npm run preview` → Sirve la build en local para probarla.  
+
+---
+
+## 📂 Flujo de ramas en Git
+
+- `main` → Producción  
+- `develop` → Integración  
+- `feature/*` → Desarrollo de nuevas pantallas o funcionalidades  
+
+Ejemplo:
+
+```bash
+# Crear rama de feature desde develop
+git checkout develop
+git pull origin develop
+git checkout -b feature/nueva-pantalla
 ```
+
+Una vez completada la feature:
+
+```bash
+# Subir cambios
+git push origin feature/nueva-pantalla
+
+# Crear PR/Merge hacia develop
+---
+
+## 🎨 Stack principal
+
+- **React 19.1.1**  
+- **React DOM 19.1.1**
+- **Vite 7.1.4**  
+- **TypeScript 5.8.3**  
+- **Material UI 7.3.2**  
+- **React Router DOM 7.8.2**  
+- **Emotion (CSS-in-JS)** para estilos con MUI  
+
+---
+
+## 📑 Dependencias
+
+### **Dependencies**
+```json
+{
+  "@emotion/react": "11.14.0",
+  "@emotion/styled": "11.14.1",
+  "@mui/icons-material": "7.3.2",
+  "@mui/material": "7.3.2",
+  "react": "19.1.1",
+  "react-dom": "19.1.1",
+  "react-router-dom": "7.8.2"
+}
+```
+
+### **DevDependencies**
+```json
+{
+  "@vitejs/plugin-react": "5.0.2",
+  "typescript": "5.8.3",
+  "typescript-eslint": "8.42.0",
+  "vite": "7.1.4"
+}
+```
+
+---
+
+## 📖 Notas para el equipo
+
+- Para nuevos features, crear ramas a partir de `develop` con el formato:  
+  ```
+  feature/<nombre-feature>
+  ```
+- Siempre hacer **Pull Request** hacia `develop`.  
+- Los merges a `main` solo deben hacerse desde `develop` cuando el código esté listo para producción.  
+- Documentar cambios relevantes en este README.  
+
